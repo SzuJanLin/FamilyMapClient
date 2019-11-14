@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp">
+    <EditText
+        android:id ="@+id/serverHostEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Server Host:"
+        android:inputType="text"/>
+
+    <EditText
+        android:id="@+id/serverPortEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/serverHostEditText"
+        android:layout_centerHorizontal="true"
+        android:hint="Server Port" />
+    <EditText
+        android:id="@+id/UsernameEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/serverPortEditText"
+        android:hint="Username"/>
+    <EditText
+        android:id="@+id/PasswordEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/UsernameEditText"
+        android:hint="Password"/>
+    <EditText
+        android:id="@+id/FirstNameEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/PasswordEditText"
+        android:hint="First Name:"/>
+    <EditText
+        android:id="@+id/LastNameEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/FirstNameEditText"
+        android:hint="Last Name:"/>
+    <EditText
+        android:id="@+id/EmailEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/LastNameEditText"
+        android:hint="Email:"/>
+
+
+</RelativeLayout>

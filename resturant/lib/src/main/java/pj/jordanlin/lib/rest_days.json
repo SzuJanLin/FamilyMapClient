@@ -1,0 +1,206 @@
+[
+  {
+    "name": "Kushi Tsuru",
+    "days": "Mon,Tues,Wed,Thu,Fri,Sat,Sun"
+  },
+  {
+    "name": "Osakaya Restaurant",
+    "days": "Mon,Tues,Wed,Thu,Fri,Sat,Sun"
+  },
+  {
+    "name": "The Stinking Rose",
+    "days": "Mon,Tues,Wed,Thu,Fri,Sat,Sun"
+  },
+  {
+    "name": "McCormick & Kuleto's",
+    "days": "Tues,Wed,Thu,Fri,Sat,Sun"
+  },
+  {
+    "name": "Mifune Restaurant",
+    "days": "Mon,Tues,Wed,Thu,Fri,Sat,Sun"
+  },
+  {
+    "name": "The Cheesecake Factory",
+    "days": "Mon,Tues,Wed,Thu,Fri,Sat"
+  },
+  {
+    "name": "New Delhi Indian Restaurant",
+    "days": "Sun,Mon,Tues,Wed,Thu,Fri,Sat"
+  },
+  {
+    "name": "Iroha Restaurant",
+    "days": "Sun,Mon,Tues,Wed,Thu,Fri,Sat"
+  },
+  {
+    "name": "Rose Pistola",
+    "days": "Sun,Mon,Tues,Wed,Thu,Fri,Sat"
+  },
+  {
+    "name": "Alioto's Restaurant",
+    "days": "Sun,Mon,Tues,Wed,Thu,Fri,Sat"
+  },
+  {
+    "name": "Canton Seafood & Dim Sum Restaurant",
+    "days": "Mon,Tues,Wed,Thu,Fri,Sat,Sun"
+  },
+  {
+    "name": "All Season Restaurant",
+    "days": "Tues,Wed,Thu,Fri,Sat"
+  },
+  {
+    "name": "Bombay Indian Restaurant",
+    "days": "Sun,Mon,Tues,Wed,Thu,Fri,Sat"
+  },
+  {
+    "name": "Sam's Grill & Seafood Restaurant",
+    "days": "Sun,Wed,Thu,Fri,Sat"
+  },
+  {
+    "name": "2G Japanese Brasserie",
+    "days": "Mon,Tues,Wed,Thu,Fri,Sat,Sun"
+  },
+  {
+    "name": "Restaurant Lulu",
+    "days": "Sun,Mon,Tues,Wed,Thu,Fri,Sat"
+  },
+  {
+    "name": "Sudachi",
+    "days": "Mon,Tues,Wed,Thu,Fri,Sat,Sun"
+  },
+  {
+    "name": "Hanuri",
+    "days": "Sun,Mon,Tues,Wed,Thu,Fri,Sat"
+  },
+  {
+    "name": "Herbivore",
+    "days": "Mon,Tues,Wed,Thu,Fri,Sat,Sun"
+  },
+  {
+    "name": "Penang Garden",
+    "days": "Mon,Tues,Wed,Thu,Fri,Sat,Sun"
+  },
+  {
+    "name": "John's Grill",
+    "days": "Sun,Mon,Thu,Fri,Sat"
+  },
+  {
+    "name": "Quan Bac",
+    "days": "Mon,Tues,Wed,Thu,Fri,Sat,Sun"
+  },
+  {
+    "name": "Bamboo Restaurant",
+    "days": "Sun,Mon,Tues,Wed,Thu,Fri,Sat"
+  },
+  {
+    "name": "Burger Bar",
+    "days": "Mon,Tues,Wed,Thu,Fri,Sat,Sun"
+  },
+  {
+    "name": "Blu Restaurant",
+    "days": "Mon,Tues,Wed,Thu,Fri,Sat,Sun"
+  },
+  {
+    "name": "Naan 'N' Curry",
+    "days": "Mon,Tues,Wed,Thu,Fri,Sat,Sun"
+  },
+  {
+    "name": "Shanghai China Restaurant",
+    "days": "Sun,Mon,Tues,Wed,Thu,Fri,Sat"
+  },
+  {
+    "name": "Tres",
+    "days": "Sun,Mon,Tues,Wed,Thu,Fri,Sat"
+  },
+  {
+    "name": "Isobune Sushi",
+    "days": "Mon,Tues,Wed,Thu,Fri,Sat,Sun"
+  },
+  {
+    "name": "Viva Pizza Restaurant",
+    "days": "Mon,Tues,Wed,Thu,Fri,Sat,Sun"
+  },
+  {
+    "name": "Far East Cafe",
+    "days": "Sun,Mon,Tues,Wed,Thu,Fri,Sat"
+  },
+  {
+    "name": "Parallel 37",
+    "days": "Mon,Tues,Wed,Thu,Fri,Sat,Sun"
+  },
+  {
+    "name": "Bai Thong Thai Cuisine",
+    "days": "Tues,Wed,Thu,Fri,Sat,Sun"
+  },
+  {
+    "name": "Alhamra",
+    "days": "Mon,Tues,Wed,Thu,Fri,Sat,Sun"
+  },
+  {
+    "name": "A-1 Cafe Restaurant",
+    "days": "Mon,Tues,Wed,Thu,Fri,Sat,Sun"
+  },
+  {
+    "name": "Nick's Lighthouse",
+    "days": "Mon,Tues,Wed,Thu,Fri,Sat"
+  },
+  {
+    "name": "Paragon Restaurant & Bar",
+    "days": "Sun,Mon,Tues,Wed,Thu,Fri,Sat"
+  },
+  {
+    "name": "Chili Lemon Garlic",
+    "days": "Mon,Tues,Wed,Thu,Fri,Sat,Sun"
+  },
+  {
+    "name": "Bow Hon Restaurant",
+    "days": "Mon,Tues,Wed,Thu,Fri,Sat,Sun"
+  },
+  {
+    "name": "San Dong House",
+    "days": "Mon,Tues,Wed,Thu,Fri,Sat,Sun"
+  },
+  {
+    "name": "Thai Stick Restaurant",
+    "days": "Mon,Tues,Wed,Thu,Fri,Sat,Sun"
+  },
+  {
+    "name": "Cesario's",
+    "days": "Mon,Tues,Wed,Thu,Fri,Sat,Sun"
+  },
+  {
+    "name": "Colombini Italian Cafe Bistro",
+    "days": "Wed,Thu,Fri,Sat,Sun"
+  },
+  {
+    "name": "Sabella & La Torre",
+    "days": "Mon,Tues,Wed,Thu,Fri,Sat,Sun"
+  },
+  {
+    "name": "Soluna Cafe and Lounge",
+    "days": "Mon,Tues,Wed,Thu,Fri,Sat,Sun"
+  },
+  {
+    "name": "Tong Palace",
+    "days": "Mon,Tues,Wed,Thu,Fri,Sat,Sun"
+  },
+  {
+    "name": "India Garden Restaurant",
+    "days": "Mon,Tues,Wed,Thu,Fri,Sat,Sun"
+  },
+  {
+    "name": "Sapporo-Ya Japanese Restaurant",
+    "days": "Mon,Tues,Wed,Thu,Fri,Sat,Sun"
+  },
+  {
+    "name": "Santorini's Mediterranean Cuisine",
+    "days": "Mon,Tues,Wed,Thu,Fri,Sat,Sun"
+  },
+  {
+    "name": "Kyoto Sushi",
+    "days": "Mon,Tues,Wed,Thu,Fri,Sat,Sun"
+  },
+  {
+    "name": "Marrakech Moroccan Restaurant",
+    "days": "Tues,Wed,Thu,Fri,Sat,Sun"
+  }
+]
