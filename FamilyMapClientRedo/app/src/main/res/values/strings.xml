@@ -1,4 +1,8 @@
 <resources>
-    <string name="app_name">FamilyMapClientRedo</string>
+    <string name="app_name">Family Map</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="signIn">Sign In</string>
+    <string name="register">Register</string>
 
 </resources>

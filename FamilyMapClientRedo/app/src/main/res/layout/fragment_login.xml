@@ -47,6 +47,52 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/LastNameEditText"
         android:hint="Email:"/>
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/radioGroupLogin"
+        android:layout_below="@id/EmailEditText"
+        android:orientation="horizontal">
+        <RadioButton
+            android:id="@+id/LoginMaleButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/EmailEditText"
+            android:text="@string/male"/>
+        <RadioButton
+            android:id="@+id/LoginFemaleButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/female"/>
+
+    </RadioGroup>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_below="@+id/radioGroupLogin">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/LoginSignIn"
+            android:text="@string/signIn"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/LoginRegister"
+            android:text="@string/register"/>
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
 
 
 </RelativeLayout>
