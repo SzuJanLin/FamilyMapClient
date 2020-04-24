@@ -13,5 +13,5 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:id="@+id/loginFrameLayout"></FrameLayout>
+        android:id="@+id/insideFrameLayout"></FrameLayout>
 </RelativeLayout>

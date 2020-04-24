@@ -1,11 +1,9 @@
 package com.example.familymapclient.UI;
 
-import android.companion.AssociationRequest;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,10 +12,12 @@ import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.example.familymapclient.DataCache;
 import com.example.familymapclient.Proxy;
 import com.example.familymapclient.R;
 import com.example.shared.requests.LoginRequest;
 import com.example.shared.requests.RegisterRequest;
+import com.example.shared.responses.EventsResponse;
 import com.example.shared.responses.LoginResponse;
 import com.example.shared.responses.PersonResponse;
 import com.example.shared.responses.PersonsResponse;
@@ -31,8 +31,10 @@ import java.net.URL;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
-public class LoginFragment  extends Fragment {
+public class LoginFragment extends Fragment {
 
     private EditText serverHost;
     private EditText serverPort;
@@ -212,9 +214,16 @@ public class LoginFragment  extends Fragment {
             toast = null;
             if(loginResponse.isSuccess()){
                 try {
+                    FetchUserTask fetchUserTask = new FetchUserTask();
                     FetchPersonsTask fetchPersonsTask = new FetchPersonsTask();
+                    FetchEventsTask fetchEventsTask = new FetchEventsTask();
                     authToken = loginResponse.getAuthToken();
-                    fetchPersonsTask.execute(new URL("http://"+hostInput+":"+portInput+"/person/"+loginResponse.getPersonID()));
+
+                    fetchPersonsTask.execute(new URL("http://"+hostInput+":"+portInput+"/person"));
+                    fetchEventsTask.execute(new URL("http://"+hostInput+":"+portInput+"/event"));
+                    DataCache dataCache = DataCache.getInstance();
+                    dataCache.setUserId(loginResponse.getPersonID());
+                    fetchUserTask.execute(new URL("http://"+hostInput+":"+portInput+"/person/"+loginResponse.getPersonID()));
 
                 } catch (MalformedURLException e) {
                     e.printStackTrace();
@@ -258,9 +267,16 @@ public class LoginFragment  extends Fragment {
 
             if(registerResponse.isSuccess()){
                 try {
+                    FetchUserTask fetchUserTask = new FetchUserTask();
                     FetchPersonsTask fetchPersonsTask = new FetchPersonsTask();
+                    FetchEventsTask fetchEventsTask = new FetchEventsTask();
                     authToken = registerResponse.getAuthToken();
-                    fetchPersonsTask.execute(new URL("http://"+hostInput+":"+portInput+"/person/"+registerResponse.getPersonID()));
+
+                    fetchPersonsTask.execute(new URL("http://"+hostInput+":"+portInput+"/person"));
+                    fetchEventsTask.execute(new URL("http://"+hostInput+":"+portInput+"/event"));
+                    DataCache dataCache = DataCache.getInstance();
+                    dataCache.setUserId(registerResponse.getPersonID());
+                    fetchUserTask.execute(new URL("http://"+hostInput+":"+portInput+"/person/"+registerResponse.getPersonID()));
 
                 } catch (MalformedURLException e) {
                     e.printStackTrace();
@@ -275,7 +291,7 @@ public class LoginFragment  extends Fragment {
     }
 
 
-    private class FetchPersonsTask extends AsyncTask<URL, Integer, PersonResponse>{
+    private class FetchUserTask extends AsyncTask<URL, Integer, PersonResponse>{
 
         @Override
         protected PersonResponse doInBackground(URL... urls) {
@@ -298,8 +314,78 @@ public class LoginFragment  extends Fragment {
 
         @Override
         protected void onPostExecute(PersonResponse personResponse) {
+
+            DataCache dataCache = DataCache.getInstance();
+            dataCache.sortFamilyMember(personResponse.getPersonID());
+
             toast = Toast.makeText(getContext(),"Welcome "+loginFirstName + " " + loginLastName, Toast.LENGTH_SHORT);
             toast.show();
+
+            
+            Fragment mapFragment = new MapFragment();
+            FragmentManager fm = getFragmentManager();
+            FragmentTransaction transaction = fm.beginTransaction();
+            transaction.replace(R.id.insideFrameLayout,mapFragment);
+            transaction.commit();
+
+        }
+    }
+
+
+    private class FetchPersonsTask extends AsyncTask<URL, Integer, PersonsResponse>{
+
+        @Override
+        protected PersonsResponse doInBackground(URL... urls) {
+            PersonsResponse personsResponse = null;
+            Gson gson = new Gson();
+            Proxy proxy = new Proxy();
+
+            try {
+                String personsContent = proxy.getConnection(urls[0],authToken);
+                personsResponse = gson.fromJson(personsContent,PersonsResponse.class);
+                if(personsResponse.isSuccess()){
+                    //add into dataCache
+                }else
+                    throw new MalformedParameterizedTypeException();
+
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+            return personsResponse;
+        }
+
+        @Override
+        protected void onPostExecute(PersonsResponse personsResponse){
+            DataCache dataCache = DataCache.getInstance();
+            dataCache.initialPersonsDataInsert(personsResponse);
+        }
+    }
+    private class FetchEventsTask extends AsyncTask<URL, Integer, EventsResponse>{
+
+        @Override
+        protected EventsResponse doInBackground(URL... urls) {
+            EventsResponse eventsResponse = null;
+            Gson gson = new Gson();
+            Proxy proxy = new Proxy();
+
+            try {
+                String eventsContent = proxy.getConnection(urls[0],authToken);
+                eventsResponse = gson.fromJson(eventsContent,EventsResponse.class);
+                if(eventsResponse.isSuccess()){
+                    //add into dataCache
+                }else
+                    throw new MalformedParameterizedTypeException();
+
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+            return eventsResponse;
+        }
+
+        @Override
+        protected void onPostExecute(EventsResponse eventsResponse){
+            DataCache dataCache = DataCache.getInstance();
+            dataCache.initialEventsDataInsert(eventsResponse);
         }
     }
 }

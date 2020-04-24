@@ -1,10 +1,10 @@
 package com.example.familymapclient.UI;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
+import com.joanzapata.iconify.Iconify;
+import com.joanzapata.iconify.fonts.FontAwesomeModule;
 
-import android.location.Address;
 import android.os.Bundle;
 
 import com.example.familymapclient.R;
@@ -15,16 +15,20 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Iconify.with(new FontAwesomeModule());
+
 
         FragmentManager fm = this.getSupportFragmentManager();
-        loginFragment = (LoginFragment) fm.findFragmentById(R.id.loginFrameLayout);
+        loginFragment = (LoginFragment) fm.findFragmentById(R.id.insideFrameLayout);
         if (loginFragment == null){
             loginFragment = createLoginFragment("LOGIN");
-            fm.beginTransaction().add(R.id.loginFrameLayout,loginFragment).commit();
         }
+
+        fm.beginTransaction().add(R.id.insideFrameLayout,loginFragment).commit();
 
     }
 

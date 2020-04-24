@@ -1,8 +1,6 @@
 package com.example.server.handler;
 
 import com.example.server.DAO.Database;
-import com.example.server.DAO.EventDAO;
-import com.example.server.DAO.PersonDAO;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 import com.example.server.jsonTempClass.Locations;

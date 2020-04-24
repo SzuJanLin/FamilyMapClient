@@ -50,6 +50,7 @@
             android:layout_height="wrap_content"
             android:layout_span="3"
             android:inputType="text"
+            android:text="sheila"
            />
     </TableRow>
     <TableRow>
@@ -64,6 +65,7 @@
             android:layout_height="wrap_content"
             android:layout_span="3"
             android:inputType="textPassword"
+            android:text="parker"
             />
     </TableRow>
     <TableRow>
@@ -133,7 +135,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/signIn"
-            android:enabled="false"
+            android:enabled="true"
             />
         <Button
             android:id="@+id/register"
